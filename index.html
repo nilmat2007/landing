@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Animated Landing Page</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --background-color: #f4f4f4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 800px;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s forwards;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 2rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s 0.5s forwards;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+            opacity: 0;
+            animation: fadeInUp 1s 1s forwards;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        #animated-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            opacity: 0.3;
+            animation: float 10s infinite alternate;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(50px); }
+        }
+
+        @media (max-width: 600px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="animated-background">
+        <div class="circle" style="top: 10%; left: 10%; width: 200px; height: 200px;"></div>
+        <div class="circle" style="top: 60%; right: 15%; width: 150px; height: 150px;"></div>
+        <div class="circle" style="bottom: 20%; left: 30%; width: 100px; height: 100px;"></div>
+    </div>
+    <div class="container">
+        <h1 class="hero-title">Welcome to Our Creative Space</h1>
+        <p class="hero-subtitle">Discover innovation, inspiration, and imagination</p>
+        <a href="#" class="cta-button">Coming Soon</a>
+    </div>
+</body>
+</html>
